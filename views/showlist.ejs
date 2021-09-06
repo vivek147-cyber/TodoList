@@ -28,14 +28,23 @@
 
     <div class="container" style="margin-top: 120px;">
 
-        <h1>YOUR TODOLIST</h1>
-
+        
         <% if(lists!=0){ %>
             
-                <h2><%= lists.Title %></h2>
-                <h2><%= lists.created_at.toDateString() %></h2>
+            <center><h2><%= lists.Title %></h2></center>
+            <hr>
+                
+            <span><%= lists.created_at.toDateString() %></span>
+            <span style="float: right;"> <a href="/home/edit/<%= lists._id %>"><img src="/images/edit.png" alt="edit"
+                style="height: 23px;"></a>
+    <a href="/home/delete/<%= lists._id %>"><img src="/images/delete.png" alt="delete"
+                style="height: 23px;"></a></span>
+           
+            <br>
+            <br>
 
-                <p><%- lists.body %></p>
+            <center><p><%- lists.body %></p></center>
+            
               
         
         <% } else { %>
