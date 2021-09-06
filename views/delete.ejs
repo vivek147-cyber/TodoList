@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+    <title>Delete Todolist</title>
+
+    <style>
+        @media only screen and (min-width: 600px) {
+            .container {
+                width: 800px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container" style="margin-top: 120px;">
+
+        <h1>DELETING YOUR LIST</h1>
+
+        <br>
+        <br>
+
+        <form action="/home/<%= lists._id %>" method="POST" id="delete-form">
+            <input type="hidden" name="_method" value="DELETE">
+           
+
+
+            <p>Sure you want to delete <%= lists.Title %>?</p>
+            
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.16.2/ckeditor.js"
+        integrity="sha512-bGYUkjDyyOMGm3ASzq3zRaWZ4CONNH1wAYMFch/Z0ASZrsg722SeRsX0FPPRZjTuJrqIMbB9fvY0LEMzyHeyeQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        CKEDITOR.replace('body',{
+            plugins: 'wysiwygarea, toolbar, basicstyles, link'
+        })
+    </script>
+
+
+</body>
+
+</html>
